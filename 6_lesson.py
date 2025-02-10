@@ -31,6 +31,7 @@ def rating_password(password):
         if check_func(password):
             score += points
     return score
+    
 
 def main():
     password = input("Введите пароль: ")
