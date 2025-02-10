@@ -21,17 +21,13 @@ def rating_password(password):
         (has_lower_letters, 2),
         (has_symbols, 2),
     ]
-    score = 0
-    for check_func, points in checks:
-        if check_func(password):
-            score += points
-    return score
+    return sum(points for check_func, points in checks if check_func(password))
 
 def main():
     password = input('Введите пароль: ')
-    print(password)
+    print(f"Введённый пароль: {password}")
     score = rating_password(password)
-    print("Рейтинг пароля:", score)
+    print(f"Рейтинг пароля: {score}")
 
 if __name__ == "__main__":
     main()
